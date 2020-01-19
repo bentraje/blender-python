@@ -42,5 +42,5 @@ bpy.data.object['objectName'].name
 
 # Modify Parameters
 bpy.data.object['objectName'].location = (1,2,3)
-bpy.data.object['objectName'].name = "newObjectName)
+bpy.data.object['objectName'].name = "newObjectName
 ```
