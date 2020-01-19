@@ -1,6 +1,5 @@
 # Duplicate selected controls and append "_match" in their name
 
-
 import bpy
 obj_list = bpy.context.selected_objects
 
