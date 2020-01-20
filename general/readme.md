@@ -36,6 +36,11 @@ you can hover a UI parameter and see its corresponding API equivalent.
 obj = bpy.data.objects.new("Empty", None)
 context.scene.objects.link(obj)
 
+# Create Collection
+col = bpy.data.collections.new('new_collection')
+bpy.context.scene.collection.children.link(col)
+col.objects.link(obj) # Link obj to to the collection
+
 # Query Parameters
 bpy.data.object['objectName'].location
 bpy.data.object['objectName'].name
