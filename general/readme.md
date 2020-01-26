@@ -48,4 +48,9 @@ bpy.data.object['objectName'].name
 # Modify Parameters
 bpy.data.object['objectName'].location = (1,2,3)
 bpy.data.object['objectName'].name = "newObjectName"
+
+# Random
+bpy.context.scene.frame_current
+
+
 ```
