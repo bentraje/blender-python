@@ -54,4 +54,18 @@ if ob.data.materials:
 else:
     # no slots
     ob.data.materials.append(mat)
+
+
+# Get All Textures
+import bpy
+
+textures = []
+for ob in bpy.data.objects:
+    if ob.type == "MESH":
+        for mat_slot in ob.material_slots:
+            if mat_slot.material:
+                if mat_slot.material.node_tree:
+                    textures.extend([x for x in mat_slot.material.node_tree.nodes if x.type=='TEX_IMAGE'])
+                    
+print(textures)
 ```
