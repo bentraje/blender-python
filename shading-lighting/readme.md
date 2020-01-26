@@ -44,3 +44,14 @@ port_name_list = [input.name for input in Node_A.inputs]
   # Modify Nodes
 node.inputs['Metallic'].default_value = 1.0
 ```
+
+Alternative
+```python
+# Assign it to object
+if ob.data.materials:
+    # assign to 1st material slot
+    ob.data.materials[0] = mat
+else:
+    # no slots
+    ob.data.materials.append(mat)
+```
