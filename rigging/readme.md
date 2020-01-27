@@ -61,3 +61,38 @@ for bone in bpy.context.selected_pose_bones:
     rot_cons.subtarget = sub_target
      
 ```
+
+```python
+#
+import bpy
+context = bpy.context
+# the rig object
+rig = context.object
+
+# all copy location constraints on all pose bones
+constraints = [c for pb in rig.pose.bones 
+                 for c in pb.constraints
+                 if c.type == 'COPY_LOCATION'
+               # and "XY" in c.name
+              ]
+
+# set the desired properties
+for c in constraints:
+    c.use_y = True
+
+# similarly for Transformation
+# type from mousing over add constraint in UI
+constraints = [c for pb in rig.pose.bones 
+                 for c in pb.constraints
+                 if c.type == 'TRANSFORM'
+              ]
+
+for tc in constraints:
+    tc.to_max_y = 0.02 # given 1 blender unit is 1m
+
+
+# all constraints from preselected pose bones
+constraints = [c for pb in context.selected_pose_bones 
+                 for c in pb.constraints
+              ]
+```
