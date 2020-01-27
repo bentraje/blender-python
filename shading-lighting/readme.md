@@ -43,6 +43,10 @@ port_name_list = [input.name for input in Node_A.inputs]
   
   # Modify Nodes
 node.inputs['Metallic'].default_value = 1.0
+
+  # REMOVE MATERIAL
+  bpy.data.materials.remove( myMaterial )
+  bpy.context.object.modifiers.remove( someModifier )
 ```
 
 Alternative
