@@ -29,8 +29,8 @@ for old_bone in old_bone_list:
                 new_constraint.owner_space = old_constraint.owner_space
                 
                 new_constraint.invert_x = old_constraint.invert_x
-                new_constraint.invert_x = old_constraint.invert_y
-                new_constraint.invert_x = old_constraint.invert_z
+                new_constraint.invert_y = old_constraint.invert_y
+                new_constraint.invert_z = old_constraint.invert_z
                 
             else:
                 pass
