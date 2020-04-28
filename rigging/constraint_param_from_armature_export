@@ -5,8 +5,8 @@ Notes:
   1) To be used with the import/export equivalent
 """
 
-
 import bpy
+import json
 
 old_armature = bpy.data.objects['Armature_proxy']
 old_bone_list = old_armature.pose.bones
@@ -49,3 +49,6 @@ for old_bone in old_bone_list:
             
     else:
         pass
+
+with open("D:/constraint_param.json", "w") as write_file:
+    json.dump(param_dict, write_file, indent=4)
