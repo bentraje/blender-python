@@ -47,6 +47,14 @@ node.inputs['Metallic'].default_value = 1.0
   # REMOVE MATERIAL
   bpy.data.materials.remove( myMaterial )
   bpy.context.object.modifiers.remove( someModifier )
+
+# CREATE TEXTURES
+tex = bpy.data.textures.new("new_texture", type='IMAGE')
+slot = mat.texture_slots.add() # Add texture slot
+slot.texture = tex
+
+node.type == 'TEX_IMAGE'
+
 ```
 
 Alternative
@@ -100,3 +108,25 @@ cube  = bpy.context.scene.objects['Cube']
 empty = bpy.context.scene.objects['Empty']
 add_driver( cube, empty, 'scale', 'scale.z', 2 )
 ```
+
+### Random
+```Python
+https://medium.com/@behreajj/coding-blender-materials-with-nodes-python-66d950c0bc02
+
+# Compositor Nodes
+https://blender.stackexchange.com/questions/19500/controling-compositor-by-python/19501
+
+# Adding Driver and Keyframe Materials
+https://blender.stackexchange.com/questions/23436/control-cycles-material-nodes-and-material-properties-in-python/23446
+
+# Animate Materials 
+https://stackoverflow.com/questions/36185377/how-i-can-create-a-material-select-it-create-new-nodes-with-this-material-and
+
+# Creating NodeGroup
+https://blender.stackexchange.com/questions/5413/how-to-connect-nodes-to-node-group-inputs-and-outputs-in-python
+https://blender.stackexchange.com/questions/67487/cycles-materials-math-node-with-more-than-two-inputs/99003/
+
+#Geometry revision 
+https://blender.stackexchange.com/questions/61879/create-mesh-then-add-vertices-to-it-in-python/61893
+```
+
